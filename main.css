@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+  hover: ;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.navbar {
+  margin-left: 3.5px;
+  margin-right: 3.5px;
+}
+
+.intro {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.intro-pic {
+  width: 30%;
+  border-radius: 1.75rem;
+}
