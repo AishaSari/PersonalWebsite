@@ -5,27 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
     <title>Website</title>
+
+    <!--
+      In software development, most of the time the solution is already built.
+      No need to reinvent the wheel.
+
+      Here I am using Jquery and slim for carousel
+      https://kenwheeler.github.io/slick/
+      https://code.jquery.com/
+    -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
-  <nav>
-    <a href class="navbar">Home</a>
-    <a href class="navbar">Portfolio</a>
-    <a href class="navbar">Contact</a>
-  </nav>
-  <body>
+  <body class="wrapper">
+    <!-- Navigation should still be part of the body -->
+    <nav>
+      <a href class="navbar">Home</a>
+      <a href class="navbar">Portfolio</a>
+      <a href class="navbar">Contact</a>
+    </nav>
     <div class="introduction">
-      <span class="intro">Hi! I am</span>
-      <h1>Aisha Sari</h1>
-      <span>I'm a high school student in Jakarta.</span>
-      <img src="https://www.hdnicewallpapers.com/Walls/Big/Cat/Beautiful_Angry_Kitten.jpg" class="intro-pic">
+      <!-- 
+        in HTML, don't worry about the amount of tags you will be using
+        think of DIV as a multi purpose wrapper. Everything that is grouped should be part of it.
+        Then we can arrange content the way we like it.
+        
+        TIP: Look into "block" vs "inline" (https://www.w3schools.com/html/html_blocks.asp)
+      -->
+      <div class="wrapper">
+        <span class="intro">Hi! I am</span>
+        <h1>Aisha Sari</h1>
+        <span>I'm a high school student in Jakarta.</span>
+      </div>
+      <div class="wrapper">
+        <img src="https://www.hdnicewallpapers.com/Walls/Big/Cat/Beautiful_Angry_Kitten.jpg" class="intro-pic">
+      </div>
+      
     </div>
     <div class="portfolio">
-      <h3>Portfolio</h3>
-      <!-- how -->
+      <h3 class="text-center">Portfolio</h3>
+      <div class="portfolio-carousel">
+        <div>your content</div>
+        <div>your content</div>
+        <div>your content</div>
+        <div>your content</div>
+        <div>your content</div>
+      </div>
     </div>
+    <!-- we are going to output data here -->
+    <div class="result"></div>
     <div class="contact">
-      <h3 class="contact">Contact Me</h3>
+      <!-- you can do multiple class name, separated by space-->
+      <h3 class="contact text-center">Contact Me</h3>
       <a href="#" class="contact-link">Email</a>
       <a href="https://www.linkedin.com/in/aishasari/" class="contact-link">LinkedIn</a>
     </div>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        // Getting data from a "server"
+        $.get( "http://localhost:3000/", function( data ) {
+          // Data from server usually comes as JSON
+          // See if you can play around with it
+          $( ".result" ).html( JSON.stringify(data, null, 2) );
+        });
+
+        // Look into the slick documentation on how to use
+        $('.portfolio-carousel').slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 3
+        });
+      });
+    </script>
   </body>
 </html>

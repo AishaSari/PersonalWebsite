@@ -1,0 +1,23 @@
+{
+  "name": "personalwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AishaSari/PersonalWebsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AishaSari/PersonalWebsite/issues"
+  },
+  "homepage": "https://github.com/AishaSari/PersonalWebsite#readme",
+  "devDependencies": {
+    "serverless": "^2.40.0",
+    "serverless-offline": "^7.0.0"
+  }
+}

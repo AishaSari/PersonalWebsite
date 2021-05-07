@@ -1,12 +1,42 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  background-color: #f2f3ef;
+}
+
+/*
+* CSS lets us be specific as to how a class behave when its in another class.
+* .introduction .wrapper 
+* vs
+* .wrapper
+* will sho a different result based on where the .intro class is located
+*/
+.wrapper {
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+
+  max-width: 960px; /* 2 */
+}
+
+.introduction .wrapper {
+  width: 50%;
+  margin:0;
+  float: left;
+}
+
+.introduction {
+  overflow: hidden;
 }
 
 a {
   text-decoration: none;
-  hover: ;
+}
+
+/* 
+* if used multiple times, best to use class
+* Otherwise use ID
+*/
+.text-center {
+  text-align: center;
 }
 
 nav {
@@ -27,6 +57,13 @@ nav {
 }
 
 .intro-pic {
-  width: 30%;
+  width: 50%;
+  display: block;
   border-radius: 1.75rem;
+  margin: auto;
+}
+
+.portfolio-carousel {
+  margin-top: 3em;
+  margin-bottom: 3em;
 }
